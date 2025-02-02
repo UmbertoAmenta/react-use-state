@@ -26,10 +26,17 @@ body {
 }
 
 .accordion > div:first-child {
-  background-color: #f6c344;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.accordionOpen {
+  background-color: #f6c344;
+}
+
+.accordionClosed {
+  background-color: #efefef;
 }
 
 .accordion h3 {
