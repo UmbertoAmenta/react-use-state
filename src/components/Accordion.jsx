@@ -1,15 +1,22 @@
 import { useState } from "react";
 
-export default function Accordion({ id, title, description }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Accordion({
+  id,
+  title,
+  description,
+  isOpen,
+  onAccordToggle,
+}) {
+  // const [isOpen, setIsOpen] = useState(false);
   const toggleAccordion = () => {
-    return setIsOpen(!isOpen);
+    return setIsOpen((current) => !current);
   };
+
   return (
     <div key={id} className="accordion">
       <div className={isOpen ? "accordionOpen" : "accordionClosed"}>
         <h3>{title}</h3>
-        <button onClick={toggleAccordion}>{isOpen ? "-" : "+"}</button>
+        <button onClick={onAccordToggle}>{isOpen ? "-" : "+"}</button>
       </div>
       {isOpen && (
         <div>
